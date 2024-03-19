@@ -1,0 +1,168 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+
+}
+
+textarea{
+     /* unset all the default styling of textarea (boarer etc) */
+     all: unset;
+}
+
+body{
+     font-family: 'Inter', sans-serif;
+     background-color: #e1e8eb;
+    
+     /*center the container */
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     
+}
+
+.background{
+     position: absolute; /* its does not affect the position of the other element */
+     top: 0;
+     z-index: -1; /*it will appear behind other element*/
+     height: 254px;
+     width: 100%;
+     /*background-image: linear-gradient(to right, rgba(101,0,163,0.9), rgba(24, 120, 175, 0.9));*/
+     background-image: linear-gradient(
+          to right,
+          rgba(117, 163, 0, 0.9), 
+          rgba(24, 120, 175, 0.9)
+          ),
+          url('https://images.unsplash.com/photo-1546453667-8a8d2d07bc20?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=100');
+}
+
+.first-heading{
+     font-size: 65px;
+     letter-spacing: 5px;
+     text-transform: uppercase;
+     color: rgba(255,255,255,0.92);
+     margin-top: 75px;
+
+}
+
+.first-heading--speacial{
+     font-weight: 300;
+}
+
+.container{
+     width: 1000px;
+     height: 480px;
+     background-color: #fff;
+     border-radius: 10px;
+     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+     /*push it down a little bit */
+     margin-top: 55px;
+
+     /* layout the text area and stats */
+     display: flex;
+
+     /* correct the right side border radius after assigning the color */
+     overflow: hidden;
+}
+
+.textarea{
+     resize: none;
+     flex: 2;
+     /*inherit the font for the textarea's placeholder statement */
+     font: inherit;
+
+     padding: 30px 40px; /*30 px --> top & bottom and 40px --> left and right */
+     font-size: 22px;     
+}
+
+.textarea::placeholder{
+     font-weight: 500;
+     color:#959c9f ;
+}
+
+
+.stats{
+     flex: 1.5; /* take 1/3rd of the space and rest to the text area */
+     background-color:#f1f6f8 ;
+     display: flex;
+     flex-wrap: wrap;     
+}
+
+.stat{
+     flex: 1 150px;  /*take the same proportion and atleast each one will take 150px space */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+
+ /*apply the border to first and second child */
+ .stat:nth-child(1),
+ .stat:nth-child(2){
+     border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}  
+
+.stat:nth-child(2),
+.stat:nth-child(4){
+    border-left: 1px solid rgba(0, 0, 0, 0.08);
+} 
+
+.stat__number{
+     color: #4d5457;
+     font-weight: 600;
+     font-size: 35px;
+     margin-bottom: 10px;
+
+}
+.stat__number--limit{
+     color: red;
+}
+
+.second-heading{
+     font-size: 14px;
+     text-transform: uppercase;
+     letter-spacing: 2px;
+     font-weight: 500;
+     color: #747a7c;    
+}
+
+.footer{
+     width: 1000px;
+     margin: 15px 0;
+     display: flex;
+     justify-content: space-between;
+     opacity: 0.5;
+}
+
+/*add responsiveness */
+@media (max-width: 1140px) {
+     .container{
+          width: 85vw;  /*relative to the 85% of viewport   */
+          flex-direction: column;
+     }
+
+     .first-heading{
+          font-size: 7vw;
+     }
+
+     .stat{
+          padding: 15px 10px;
+     }
+
+     .stat:nth-child(1),
+     .stat:nth-child(2),
+     .stat:nth-child(4) {
+          border: none;
+     }
+     
+     .stat__number{
+          font-size: 20px;
+     }
+
+     .footer{
+          width: initial; /*1000px 8*/
+          flex-direction: column;
+          align-items: center;
+     }
+
+}
