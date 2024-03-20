@@ -8,7 +8,7 @@ const inputHandler = () =>
 {
      //example of input validation
      if (textareaEle.value.includes('<script>')){
-          alert('You cannot use that');
+          alert('You cannot use <script> in your text');
           //textareaEle.value = 'Wrong Input!!';
           textareaEle.value = textareaEle.value.replace('<script>','');
      }
