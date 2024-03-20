@@ -6,7 +6,7 @@
 }
 
 textarea{
-     /* unset all the default styling of textarea (boarer etc) */
+     /* unset all the default styling of textarea (border etc) */
      all: unset;
 }
 
